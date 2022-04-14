@@ -10,6 +10,6 @@
 6.  Wybieramy cel
 7.  Wciskamy przycisk obliczania zapotrzebowania
 
-##### Testy przeprowadzone są w przeglądarce Chrome oraz
+##### Testy przeprowadzone są w przeglądarce Chrome oraz Firefox
 
 ##### Raport z testów został wygenerowany za pomocą [mochaawesome](https://www.npmjs.com/package/mochawesome-report-generator)
