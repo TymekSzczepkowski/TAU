@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-14T12:50:33.229Z",
+    "end": "2022-04-14T12:50:44.512Z",
+    "duration": 11283,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cde0f9b9-665b-4da8-821d-c4d44c0fde84",
+      "title": "",
+      "fullFile": "C:\\Users\\TymoteuszSzczepkowsk\\Desktop\\Foldery\\PJATK\\TAU\\Labolatoria 3\\zadanie3.js",
+      "file": "\\zadanie3.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f4619b60-ff72-4056-8f38-da1a1e9616cf",
+          "title": "zadanie3",
+          "fullFile": "C:\\Users\\TymoteuszSzczepkowsk\\Desktop\\Foldery\\PJATK\\TAU\\Labolatoria 3\\zadanie3.js",
+          "file": "\\zadanie3.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Calucalte and verify BMR with weight: 80 height: 190 age:30 in Chrome",
+              "fullTitle": "zadanie3 Calucalte and verify BMR with weight: 80 height: 190 age:30 in Chrome",
+              "timedOut": false,
+              "duration": 4982,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(\"https://www.fabrykasily.pl/bmr\");\n//find the input weight and enter it\nawait driver\n  .findElement(By.xpath(\"//input[@name='weight']\"))\n  .sendKeys(weight);\nawait driver\n  //find the input height and enter it\n  .findElement(By.xpath(\"//input[@name='height']\"))\n  .sendKeys(height);\n//find the input age and enter it\nawait driver.findElement(By.xpath(\"//input[@name='age']\")).sendKeys(age);\n//select amount of activity\nawait driver.findElement(By.xpath(\"//select[@name='activity']\")).click();\nawait driver.findElement(By.xpath(\"//option[@value='1']\")).click();\n//select your goal\nawait driver.findElement(By.xpath(\"//select[@name='todo']\")).click();\nawait driver\n  .findElement(By.xpath(\"//select[@name='todo']//option[@value='2']\"))\n  .click();\nawait driver.findElement(By.className(\"container--s2\")).click();\n//caluclate caloric demand\nawait driver\n  .findElement(\n    By.className(\"fs-calc__btn btn--c1 btn--s1 btn--arrow-right\")\n  )\n  .click();\nlet basicMetabolism = await driver\n  .findElement(\n    By.xpath(\"/html/body/div[2]/div[1]/div[3]/div/div/div[1]/div[2]/span\")\n  )\n  .getText()\n  .then(function (value) {\n    return value;\n  });\nlet keepYourWeight = await driver\n  .findElement(\n    By.xpath(\"/html/body/div[2]/div[1]/div[3]/div/div/div[1]/div[4]/span\")\n  )\n  .getText()\n  .then(function (value) {\n    return value;\n  });\nbasicMetabolism.should.equal(result1);\nkeepYourWeight.should.equal(result2);\nkeepYourWeight.should.not.equal(badresult1);\nkeepYourWeight.should.not.equal(badresult2);\nawait driver.quit();",
+              "err": {},
+              "uuid": "806ef654-8d88-4761-9b9f-0d10bf6da002",
+              "parentUUID": "f4619b60-ff72-4056-8f38-da1a1e9616cf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Calucalte and verify BMR with weight: 80 height: 190 age:30 in Firefox",
+              "fullTitle": "zadanie3 Calucalte and verify BMR with weight: 80 height: 190 age:30 in Firefox",
+              "timedOut": false,
+              "duration": 6287,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driverFirefox.get(\"https://www.fabrykasily.pl/bmr\");\n//find the input weight and enter it\nawait driverFirefox\n  .findElement(By.xpath(\"//input[@name='weight']\"))\n  .sendKeys(weight);\nawait driverFirefox\n  //find the input height and enter it\n  .findElement(By.xpath(\"//input[@name='height']\"))\n  .sendKeys(height);\n//find the input age and enter it\nawait driverFirefox\n  .findElement(By.xpath(\"//input[@name='age']\"))\n  .sendKeys(age);\n//select amount of activity\nawait driverFirefox\n  .findElement(By.xpath(\"//select[@name='activity']\"))\n  .click();\nawait driverFirefox.findElement(By.xpath(\"//option[@value='1']\")).click();\n//select your goal\nawait driverFirefox.findElement(By.xpath(\"//select[@name='todo']\")).click();\nawait driverFirefox\n  .findElement(By.xpath(\"//select[@name='todo']//option[@value='2']\"))\n  .click();\nawait driverFirefox.findElement(By.className(\"container--s2\")).click();\n//caluclate caloric demand\nawait driverFirefox\n  .findElement(\n    By.className(\"fs-calc__btn btn--c1 btn--s1 btn--arrow-right\")\n  )\n  .click();\nlet basicMetabolism = await driverFirefox\n  .findElement(\n    By.xpath(\"/html/body/div[2]/div[1]/div[3]/div/div/div[1]/div[2]/span\")\n  )\n  .getText()\n  .then(function (value) {\n    return value;\n  });\nlet keepYourWeight = await driverFirefox\n  .findElement(\n    By.xpath(\"/html/body/div[2]/div[1]/div[3]/div/div/div[1]/div[4]/span\")\n  )\n  .getText()\n  .then(function (value) {\n    return value;\n  });\nbasicMetabolism.should.equal(result1);\nkeepYourWeight.should.equal(result2);\nkeepYourWeight.should.not.equal(badresult1);\nkeepYourWeight.should.not.equal(badresult2);\nawait driverFirefox.quit();",
+              "err": {},
+              "uuid": "dc35c4f6-4ca5-44a9-a171-8cc90024a9cc",
+              "parentUUID": "f4619b60-ff72-4056-8f38-da1a1e9616cf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "806ef654-8d88-4761-9b9f-0d10bf6da002",
+            "dc35c4f6-4ca5-44a9-a171-8cc90024a9cc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11269,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 20000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
