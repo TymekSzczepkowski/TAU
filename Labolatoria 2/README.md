@@ -11,5 +11,3 @@
 7.  Wciskamy przycisk obliczania zapotrzebowania
 
 ##### Testy przeprowadzone są w przeglądarce Chrome oraz
-
-##### Raport z testów został wygenerowany za pomocą [mochaawesome](https://www.npmjs.com/package/mochawesome-report-generator)
