@@ -2,3 +2,7 @@ Labolatoria 1/node_modules
 Labolatoria 2/node_modules
 Labolatoria 3/node_modules
 Drivers/
+__pycache__
+.pytest_cache
+venv
+calculator.pyc
